@@ -2,10 +2,12 @@
 Description=tested service :-)
 
 [Service]
+Type=oneshot
+
 User=lenny
 Group=users
 
-ExecStart=/usr/bin/node /home/lenny/thingies/...
+ExecStart=/usr/bin/xvfb-run /usr/bin/node /home/lenny/thingies/ui-tester-service/output/service.js
 WorkingDirectory=/home/lenny/testing/fake-working-directory
 
 Environment=SOCKETMODE=true
